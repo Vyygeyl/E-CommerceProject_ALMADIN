@@ -1,0 +1,74 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "E-CommerceUI/1.0.0": {
+        "dependencies": {
+          "E-CommerceAppService": "1.0.0",
+          "E-CommerceDataService": "1.0.0",
+          "E-CommerceModels": "1.0.0"
+        },
+        "runtime": {
+          "E-CommerceUI.dll": {}
+        }
+      },
+      "E-CommerceAppService/1.0.0": {
+        "dependencies": {
+          "E-CommerceDataService": "1.0.0",
+          "E-CommerceModels": "1.0.0"
+        },
+        "runtime": {
+          "E-CommerceAppService.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "E-CommerceDataService/1.0.0": {
+        "dependencies": {
+          "E-CommerceModels": "1.0.0"
+        },
+        "runtime": {
+          "E-CommerceDataService.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "E-CommerceModels/1.0.0": {
+        "runtime": {
+          "E-CommerceModels.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "E-CommerceUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "E-CommerceAppService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "E-CommerceDataService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "E-CommerceModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
