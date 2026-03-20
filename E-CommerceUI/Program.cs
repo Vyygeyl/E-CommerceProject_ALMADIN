@@ -15,7 +15,7 @@ namespace E_CommerceUI
             do
             {
                 Console.WriteLine(" ");
-                Console.WriteLine("Welcome to E-Commerce Seller Profile Management System");
+                Console.WriteLine("Welcome to E-Commerce Seller Management System");
                 Console.WriteLine(" ");
                 Console.WriteLine("===================");
                 Console.WriteLine("0. View Seller Profiles");

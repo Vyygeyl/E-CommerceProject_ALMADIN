@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceModels\\E-CommerceModels.csproj",
+      "projectUniqueName": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\E-CommerceModels.csproj",
       "projectName": "E-CommerceModels",
-      "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceModels\\E-CommerceModels.csproj",
+      "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\E-CommerceModels.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceModels\\obj\\",
+      "outputPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

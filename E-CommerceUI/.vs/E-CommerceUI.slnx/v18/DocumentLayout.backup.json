@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\",
+  "WorkspaceRootPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C134445-5DA2-D88A-AEDD-2093F27CCCE2}|E-CommerceUI.csproj|d:\\users\\vee_visualstudio\\e-commerceproject\\e-commerceui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C134445-5DA2-D88A-AEDD-2093F27CCCE2}|E-CommerceUI.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commerceui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C134445-5DA2-D88A-AEDD-2093F27CCCE2}|E-CommerceUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -147,11 +147,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\Program.cs",
+              "DocumentMoniker": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAqwFwAAAA8AAAAAAAAAA==",
+              "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwDYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T06:42:22.03Z",
               "EditorCaption": ""

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xtl6rXwrQWo=",
+  "dgSpecHash": "9acRvui23Lk=",
   "success": true,
-  "projectFilePath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\E-CommerceUI.csproj",
+  "projectFilePath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\E-CommerceUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\10.0.3\\microsoft.dotnet.ilcompiler.10.0.3.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.4\\microsoft.net.illink.tasks.10.0.4.nupkg.sha512",

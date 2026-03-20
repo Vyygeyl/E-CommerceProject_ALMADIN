@@ -241,11 +241,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\E-CommerceUI.csproj",
+      "projectUniqueName": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\E-CommerceUI.csproj",
       "projectName": "E-CommerceUI",
-      "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\E-CommerceUI.csproj",
+      "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\E-CommerceUI.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceUI\\obj\\",
+      "outputPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -262,14 +262,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceAppService\\E-CommerceAppService.csproj": {
-              "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceAppService\\E-CommerceAppService.csproj"
+            "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceAppService\\E-CommerceAppService.csproj": {
+              "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceAppService\\E-CommerceAppService.csproj"
             },
-            "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceDataService\\E-CommerceDataService.csproj": {
-              "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceDataService\\E-CommerceDataService.csproj"
+            "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceDataService\\E-CommerceDataService.csproj": {
+              "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceDataService\\E-CommerceDataService.csproj"
             },
-            "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceModels\\E-CommerceModels.csproj": {
-              "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject\\E-CommerceModels\\E-CommerceModels.csproj"
+            "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\E-CommerceModels.csproj": {
+              "projectPath": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\E-CommerceModels.csproj"
             }
           }
         }
