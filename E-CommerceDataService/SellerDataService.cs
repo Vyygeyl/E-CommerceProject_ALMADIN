@@ -14,7 +14,7 @@ namespace E_CommerceDataService
         public SellerDataService()
         {
             Product Bakery1 = new Product { ProductID = Guid.NewGuid(), ProductName = "Crinkles", ProductPrice = 7.00 };
-            Product Bakery2 = new Product { ProductID = Guid.NewGuid(), ProductName = "brownie", ProductPrice = 49.99 };
+            Product Bakery2 = new Product { ProductID = Guid.NewGuid(), ProductName = "Brownie", ProductPrice = 49.99 };
 
             SellerProfile Almadin_Bakery = new SellerProfile();
             Almadin_Bakery.SellerID = Guid.NewGuid();
@@ -43,7 +43,7 @@ namespace E_CommerceDataService
         }
 
         // CREATE
-            public void Add(SellerProfile seller)
+        public void Add(SellerProfile seller)
         {
             SellerList.Add(seller);
         }
@@ -54,6 +54,18 @@ namespace E_CommerceDataService
             return SellerList;
         }
 
+        // READ - guID
+        public SellerProfile? GetbyId(Guid ID)
+        {
+            return SellerList.FirstOrDefault(s => s.SellerID == ID);
+        }
+
+        // READ - Name
+        public SellerProfile? GetbyName(string sellerName)
+        {
+            return SellerList.FirstOrDefault(s => s.SellerName == sellerName);
+        }
+
         // CHECK
         public bool SellerExists(string sellerName)
         {
@@ -61,5 +73,29 @@ namespace E_CommerceDataService
 
         }
 
+        // DELETE
+        public void Delete(Guid ID)
+        {
+            var seller = GetbyId(ID);
+            if (seller != null)
+            {
+                SellerList.Remove(seller);
+            }
+        }
+
+        // UPDATE
+
+        public void Update(SellerProfile seller)
+        {
+            var existing = GetbyId(seller.SellerID);
+            if (existing != null)
+            {
+                existing.SellerName = seller.SellerName;
+                existing.ProductName = seller.ProductName;
+            }
+        }
+
     }
-}
+
+    }
+

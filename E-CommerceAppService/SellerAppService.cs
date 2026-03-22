@@ -15,7 +15,7 @@ namespace E_CommerceAppService
         public bool CheckSeller(SellerProfile seller)
         {
             if(sellerDataService.SellerExists(seller.SellerName))
-                return false;
+            return false;
 
             sellerDataService.Add(seller);
             return true;
@@ -27,5 +27,32 @@ namespace E_CommerceAppService
             return sellerDataService.GetSellers();
         }
 
+        // READ - Name (user)
+
+        public SellerProfile? GetSellerbyName(string sellerName)
+        {
+            return sellerDataService.GetbyName(sellerName);
+        }
+
+        // UPDATE
+        public bool UpdateSeller(string sellerName, string newName)
+        {
+            var seller = GetSellerbyName(sellerName);
+            if (seller == null)
+                return false;
+            seller.SellerName = newName;
+            sellerDataService.Update(seller);
+            return true;
+        }
+
+        // DELETE
+        public bool DeleteSeller(string sellerName)
+        {
+            var seller = GetSellerbyName(sellerName);
+            if (seller == null)
+                return false;
+            sellerDataService.Delete(seller.SellerID);
+            return true;
+        }
     }
 }

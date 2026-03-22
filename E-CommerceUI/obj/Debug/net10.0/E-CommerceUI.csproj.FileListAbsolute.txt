@@ -70,3 +70,4 @@ D:\Users\Vee_VisualStudio\E-CommerceProject_ALMADIN\E-CommerceUI\obj\Debug\net10
 D:\Users\Vee_VisualStudio\E-CommerceProject_ALMADIN\E-CommerceUI\obj\Debug\net10.0\E-CommerceUI.pdb
 D:\Users\Vee_VisualStudio\E-CommerceProject_ALMADIN\E-CommerceUI\obj\Debug\net10.0\E-CommerceUI.genruntimeconfig.cache
 D:\Users\Vee_VisualStudio\E-CommerceProject_ALMADIN\E-CommerceUI\obj\Debug\net10.0\ref\E-CommerceUI.dll
+D:\Users\Vee_VisualStudio\E-CommerceProject_ALMADIN\E-CommerceUI\bin\Debug\net10.0\sellersProfile.json
