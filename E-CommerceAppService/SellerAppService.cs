@@ -1,8 +1,6 @@
 ﻿using E_CommerceDataService;
 using E_CommerceModels;
 using System;
-using System.Collections.Generic;
-using System.Security.Principal;
 using System.Text;
 
 namespace E_CommerceAppService
