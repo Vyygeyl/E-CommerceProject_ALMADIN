@@ -18,10 +18,10 @@ namespace E_CommerceUI
                 Console.WriteLine("Welcome to E-Commerce Seller Profile Management System");
                 Console.WriteLine(" ");
                 Console.WriteLine("===================");
-                Console.WriteLine("0. View Seller Profiles");
-                Console.WriteLine("1. Add Seller Profile");
-                Console.WriteLine("2. Update Seller Profile");
-                Console.WriteLine("3. Delete a Seller Profile");
+                Console.WriteLine("[1] View Seller Profiles");
+                Console.WriteLine("[2] Add Seller Profile");
+                Console.WriteLine("[3] Update Seller Profile");
+                Console.WriteLine("[4] Delete a Seller Profile");
                 Console.WriteLine("===================");
                 Console.WriteLine(" ");
                 Console.Write("Choose an option: ");
@@ -29,16 +29,16 @@ namespace E_CommerceUI
 
                 switch (pick)
                 {
-                    case 0:
+                    case 1:
                         ViewSellers();
                         break;
-                    case 1:
+                    case 2:
                         AddSeller();
                         break;
-                    case 2:
+                    case 3:
                         UpdateSeller();
                         break;
-                    case 3:
+                    case 4:
                         DeleteSeller();
                         break;
                     default:

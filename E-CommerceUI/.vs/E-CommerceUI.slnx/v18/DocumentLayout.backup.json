@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{9C134445-5DA2-D88A-AEDD-2093F27CCCE2}|E-CommerceUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B63426B-A7F2-430B-98DF-86631E4A372E}|..\\E-CommerceDataService\\E-CommerceDataService.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commercedataservice\\sellerdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7979AFA-C764-48CF-88AE-E2D3A70FC0E8}|..\\E-CommerceModels\\E-CommerceModels.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commercemodels\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7979AFA-C764-48CF-88AE-E2D3A70FC0E8}|..\\E-CommerceModels\\E-CommerceModels.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commercemodels\\sellerprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{451AAADB-A71A-4567-8A09-327ECDC3A2A7}|..\\E-CommerceAppService\\E-CommerceAppService.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commerceappservice\\sellerappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B63426B-A7F2-430B-98DF-86631E4A372E}|..\\E-CommerceDataService\\E-CommerceDataService.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commercedataservice\\sellerdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7979AFA-C764-48CF-88AE-E2D3A70FC0E8}|..\\E-CommerceModels\\E-CommerceModels.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commercemodels\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{451AAADB-A71A-4567-8A09-327ECDC3A2A7}|..\\E-CommerceAppService\\E-CommerceAppService.csproj|d:\\users\\vee_visualstudio\\e-commerceproject_almadin\\e-commerceappservice\\sellerappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceUI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowBQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T05:22:28.94Z",
               "IsPinned": true,
@@ -58,26 +58,25 @@
               "RelativeDocumentMoniker": "..\\E-CommerceModels\\SellerProfile.cs",
               "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\SellerProfile.cs",
               "RelativeToolTip": "..\\E-CommerceModels\\SellerProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T05:22:29.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SellerDataService.cs",
               "DocumentMoniker": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceDataService\\SellerDataService.cs",
               "RelativeDocumentMoniker": "..\\E-CommerceDataService\\SellerDataService.cs",
-              "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceDataService\\SellerDataService.cs*",
-              "RelativeToolTip": "..\\E-CommerceDataService\\SellerDataService.cs*",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAmwJcAAAAiAAAAAAAAAA==",
+              "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceDataService\\SellerDataService.cs",
+              "RelativeToolTip": "..\\E-CommerceDataService\\SellerDataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T05:22:29.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-27T05:22:29.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SellerAppService.cs",
               "DocumentMoniker": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceAppService\\SellerAppService.cs",
               "RelativeDocumentMoniker": "..\\E-CommerceAppService\\SellerAppService.cs",
@@ -89,15 +88,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\Product.cs",
               "RelativeDocumentMoniker": "..\\E-CommerceModels\\Product.cs",
               "ToolTip": "D:\\Users\\Vee_VisualStudio\\E-CommerceProject_ALMADIN\\E-CommerceModels\\Product.cs",
               "RelativeToolTip": "..\\E-CommerceModels\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-27T05:22:29.297Z"
+              "WhenOpened": "2026-03-27T05:22:29.297Z",
+              "EditorCaption": ""
             }
           ]
         }
