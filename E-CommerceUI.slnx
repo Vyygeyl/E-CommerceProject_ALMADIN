@@ -1,6 +1,0 @@
-<Solution>
-  <Project Path="../E-CommerceAppService/E-CommerceAppService.csproj" Id="451aaadb-a71a-4567-8a09-327ecdc3a2a7" />
-  <Project Path="../E-CommerceDataService/E-CommerceDataService.csproj" Id="6b63426b-a7f2-430b-98df-86631e4a372e" />
-  <Project Path="../E-CommerceModels/E-CommerceModels.csproj" Id="c7979afa-c764-48cf-88ae-e2d3a70fc0e8" />
-  <Project Path="E-CommerceUI.csproj" />
-</Solution>

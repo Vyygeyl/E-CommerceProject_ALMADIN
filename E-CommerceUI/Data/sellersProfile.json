@@ -1,0 +1,55 @@
+[
+  {
+    "SellerID": "0d399f9e-cf45-4351-9cb3-bf5b1e4d422a",
+    "SellerName": "Bake my Day",
+    "ProductName": [
+      {
+        "ProductID": "bcc20695-88ef-441c-9524-3ed92f360899",
+        "ProductName": "Crinkles",
+        "ProductPrice": 7
+      },
+      {
+        "ProductID": "77970a58-3915-4878-8e2b-29d0588ac06a",
+        "ProductName": "Brownie",
+        "ProductPrice": 49.99
+      }
+    ]
+  },
+  {
+    "SellerID": "fef93840-c3c8-4784-954c-783fb1cdbe9f",
+    "SellerName": "Paints \u0026 Pains",
+    "ProductName": [
+      {
+        "ProductID": "7d12f899-6455-467c-b50b-8ab99b1fce1c",
+        "ProductName": "Paint Brush",
+        "ProductPrice": 79.99
+      },
+      {
+        "ProductID": "10151a31-2d9d-4d0b-90f8-ef86d20e99b1",
+        "ProductName": "Canvas",
+        "ProductPrice": 99.99
+      },
+      {
+        "ProductID": "593e4eeb-fc77-44f0-82f8-0d7911435c98",
+        "ProductName": "Paint",
+        "ProductPrice": 29.99
+      }
+    ]
+  },
+  {
+    "SellerID": "e2b3a4ea-c0fc-4371-903e-9addb7525be5",
+    "SellerName": "JSON One Piece",
+    "ProductName": [
+      {
+        "ProductID": "b4649d3a-7304-41d2-b248-bbb858c7707e",
+        "ProductName": "Luffy ",
+        "ProductPrice": 0.99
+      },
+      {
+        "ProductID": "57205313-abd9-4522-ac29-dc70da7a627a",
+        "ProductName": "Chopper",
+        "ProductPrice": 1000
+      }
+    ]
+  }
+]
