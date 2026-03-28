@@ -402,3 +402,6 @@ FodyWeavers.xsd
 
 !E-CommerceModels/**
 !E-CommerceUI/**
+**/bin/ 
+**/obj/ 
+**/.vs/ 
