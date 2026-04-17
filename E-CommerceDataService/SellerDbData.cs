@@ -211,7 +211,29 @@ namespace E_CommerceDataService
 
             updateCommand.ExecuteNonQuery();
             sqlConnection.Close();
+
+            sqlConnection.Open();
+            var deleteProducts = "DELETE FROM ProductsTbl WHERE SellerID = @SellerID";
+            SqlCommand deleteCommand = new SqlCommand(deleteProducts, sqlConnection);
+            deleteCommand.Parameters.AddWithValue("@SellerID", seller.SellerID);
+            deleteCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            foreach (var product in seller.ProductName)
+            {
+                var insertProduct = "INSERT INTO ProductsTbl VALUES (@ProductID, @ProductName, @ProductPrice, @SellerID)";
+                SqlCommand productCommand = new SqlCommand(insertProduct, sqlConnection);
+                productCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
+                productCommand.Parameters.AddWithValue("@ProductName", product.ProductName);
+                productCommand.Parameters.AddWithValue("@ProductPrice", product.ProductPrice);
+                productCommand.Parameters.AddWithValue("@SellerID", seller.SellerID);
+
+                sqlConnection.Open();
+                productCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
+
 
         // DELETE
         public void Delete(Guid ID)

@@ -1,5 +1,7 @@
-﻿using E_CommerceModels;
-using E_CommerceAppService;
+﻿using E_CommerceAppService;
+using E_CommerceModels;
+using System;
+using System.Collections.Generic;
 
 namespace E_CommerceUI
 {
@@ -9,108 +11,126 @@ namespace E_CommerceUI
 
         static void Main(string[] args)
         {
-            int pick;
             string restart;
 
-            do
+            do 
             {
                 Console.WriteLine("\n===========================");
-
-                Console.WriteLine(" \n");
-                Console.WriteLine("=== Welcome to E-Commerce Seller Profile Management System ===");
-                Console.WriteLine(" ");
+                Console.WriteLine(" E-Commerce Seller Management");
                 Console.WriteLine("===========================");
-                Console.WriteLine("[1] View Seller Profiles");
-                Console.WriteLine("[2] Add Seller Profile");
-                Console.WriteLine("[3] Update Seller Profile");
-                Console.WriteLine("[4] Delete a Seller Profile");
+                Console.WriteLine("  [1] View Seller Profiles");
+                Console.WriteLine("  [2] Add Seller Profile");
+                Console.WriteLine("  [3] Update Seller Name");
+                Console.WriteLine("  [4] Manage Products"); 
+                Console.WriteLine("  [5] Delete Seller");
                 Console.WriteLine("===========================");
-                Console.WriteLine(" ");
-                Console.Write("Choose an option: ");
-                pick = Convert.ToInt32(Console.ReadLine());
 
-                switch (pick)
+                Console.Write("\n  Choose an option: ");
+
+                if (int.TryParse(Console.ReadLine(), out int pick))
                 {
-                    case 1:
-                        ViewSellers();
-                        break;
-                    case 2:
-                        AddSeller();
-                        break;
-                    case 3:
-                        UpdateSeller();
-                        break;
-                    case 4:
-                        DeleteSeller();
-                        break;
-                    default:
-                        Console.WriteLine("=== Invalid option. Please select a valid option ===");
-                        break;
+                    switch (pick)
+                    {
+                        case 1:
+                            ViewSellers();
+                            break;
+                        case 2:
+                            AddSeller();
+                            break;
+                        case 3:
+                            UpdateSeller();
+                            break;
+                        case 4:
+                            ManageProducts();
+                            break;
+                        case 5:
+                            DeleteSeller();
+                            break;
+                        default:
+                            Console.WriteLine("\n  >> Invalid option. Choose 1-5.");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\n  >> Invalid input. Please enter a number.");
                 }
 
-                Console.Write("\nDo you want to run the system again? (y/n): ");
-                restart = Console.ReadLine().ToLower();
+                while (true)
+                {
+                    Console.Write("\n  Run again? (y/n): ");
+                    restart = Console.ReadLine()?.ToLower().Trim();
+
+                    if (restart == "y" || restart == "n") break;
+
+                    Console.WriteLine("  >> Please enter 'y' for Yes or 'n' for No.");
+                }
 
             } while (restart == "y");
-
         }
-
 
         static void ViewSellers()
         {
-            Console.WriteLine("\n===== Seller Profiles =====");
-            Console.WriteLine("\n===========================\n");
-
+            Console.WriteLine("\n===========================");
+            Console.WriteLine("  View Seller Profiles");
+            Console.WriteLine("===========================");
 
             var sellers = sellerAppService.GetSellers();
 
             for (int i = 0; i < sellers.Count; i++)
             {
-                Console.WriteLine($"[{i + 1}] Seller: {sellers[i].SellerName}");
-                Console.WriteLine("Products:");
+                Console.WriteLine($"\n  [{i + 1}] {sellers[i].SellerName}");
+                Console.WriteLine("  Products:");
+                Console.WriteLine("  --------");
 
                 if (sellers[i].ProductName != null && sellers[i].ProductName.Count > 0)
                 {
                     foreach (var product in sellers[i].ProductName)
                     {
-                        Console.WriteLine($"  - {product.ProductName} : {product.ProductPrice}");
+                        Console.WriteLine($"    Name: {product.ProductName}  |  Price: {product.ProductPrice}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n=== No products yet ===");
+                    Console.WriteLine("    No products listed.");
                 }
-
-                Console.WriteLine("\n===========================\n");
             }
+            Console.WriteLine("\n===========================");
         }
 
         static void AddSeller()
         {
-            Console.WriteLine("\n===== You are ADDING a new Seller Profile =====");
-            Console.WriteLine("\n===============================================");
+            Console.WriteLine("\n===========================");
+            Console.WriteLine("  Add Seller Profile");
+            Console.WriteLine("===========================");
 
-            Console.Write("\nSeller Name: ");
-            string name = Console.ReadLine();
+            Console.Write("\n  Seller Name: ");
+            string name = Console.ReadLine().Trim();
+
+            Console.Write("\n  Number of products: ");
+            if (!int.TryParse(Console.ReadLine(), out int count))
+            {
+                Console.WriteLine("\n  >> Invalid number.");
+                return;
+            }
 
             SellerProfile newSeller = new SellerProfile();
-            newSeller.SellerID = Guid.NewGuid();
             newSeller.SellerName = name;
-            newSeller.ProductName = new List<Product>();
 
-            Console.WriteLine("\n===============================================");
-
-            Console.Write("\nTotal number of Products for " + name + ": ");
-            int count = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n===============================================");
 
             for (int i = 0; i < count; i++)
             {
-                Console.WriteLine("\n=== Product " + (i + 1) + " ===");
-                Console.Write("Product Name: ");
-                string productName = Console.ReadLine();
-                Console.Write("Price: ");
-                double price = double.Parse(Console.ReadLine());
+                Console.WriteLine($"\n  Product {i + 1}");
+                Console.WriteLine("  ---------------");
+                Console.Write("  Name: ");
+                string productName = Console.ReadLine().Trim();
+
+                Console.Write("  Price: ");
+                if (!double.TryParse(Console.ReadLine(), out double price) || price < 0)
+                {
+                    Console.WriteLine("\n  >> Invalid price. Change to 0");
+                    price = 0;
+                }
 
                 Product newProduct = new Product();
                 newProduct.ProductID = Guid.NewGuid();
@@ -121,156 +141,192 @@ namespace E_CommerceUI
             }
 
             bool success = sellerAppService.CheckSeller(newSeller);
-
             if (success)
             {
-                Console.WriteLine("\n=== Successfully added Seller " + name + " ===");
-                Console.WriteLine("\n === Successfully added " + count + " Products ===");
+                Console.WriteLine($"\n  >> Seller \"{name}\" added successfully.");
             }
             else
             {
-                Console.WriteLine("\n=== Seller " + name + " already exists ===");
+                Console.WriteLine($"\n  >> Failed to add seller. Check if name is valid or exists.");
             }
         }
 
         static void UpdateSeller()
         {
-            Console.WriteLine("\n===== You are UPDATING a Seller Profile =====");
-            Console.WriteLine("\n=============================================");
+            Console.WriteLine("\n===========================");
+            Console.WriteLine("  Update Seller Name");
+            Console.WriteLine("===========================");
 
-            Console.Write("\nEnter Seller Name to update: ");
-            string name = Console.ReadLine();
+            Console.Write("\n  Seller name to update: ");
+            string name = Console.ReadLine().Trim();
 
             var seller = sellerAppService.GetSellerbyName(name);
-
             if (seller == null)
             {
-                Console.WriteLine("\n=== Seller not found ===");
+                Console.WriteLine("\n  >> Seller not found.");
                 return;
             }
 
-            Console.WriteLine("\n=== What do you want to update? ===\n");
-            Console.WriteLine("[1] Seller Name");
-            Console.WriteLine("[2] Products");
-            Console.WriteLine("[3] Both");
-            Console.WriteLine("\n===================================");
+            Console.Write("  New name: ");
+            string newName = Console.ReadLine().Trim();
 
-            Console.Write("\nChoose an option: ");
-            int option = Convert.ToInt32(Console.ReadLine());
-
-            string newName = name;
-
-            if (option == 1 || option == 3)
+            if (sellerAppService.UpdateSeller(name, newName))
             {
-                Console.WriteLine("\n=== You are UPDATING a Seller Name ===");
-                Console.Write("\nEnter new Seller Name: ");
-                newName = Console.ReadLine();
-                Console.WriteLine("\n======================================");
+                Console.WriteLine($"\n  >> \"{name}\" renamed to \"{newName}\"");
+            }
+            else
+            {
+                Console.WriteLine("\n  >> Update failed. Name cannot be empty.");
+            }
+        }
+
+        static void ManageProducts()
+        {
+            Console.WriteLine("\n===========================");
+            Console.WriteLine("  Manage Products");
+            Console.WriteLine("===========================");
+
+            Console.Write("\n  Seller name: ");
+            string name = Console.ReadLine().Trim();
+
+            var seller = sellerAppService.GetSellerbyName(name);
+            if (seller == null)
+            {
+                Console.WriteLine("\n  >> Seller not found.");
+                return;
             }
 
-            if (option == 2 || option == 3)
+            if (seller.ProductName == null || seller.ProductName.Count == 0)
             {
-                Console.WriteLine("\n=== Current Products ===");
+                Console.WriteLine("\n  [ No products listed ]");
+            }
+
+            else
+            {
+                Console.WriteLine($"\n  {seller.SellerName} Shop products:\n");
                 for (int i = 0; i < seller.ProductName.Count; i++)
                 {
-                    Console.WriteLine($"[{i + 1}] {seller.ProductName[i].ProductName} : {seller.ProductName[i].ProductPrice}");
-                }
-                Console.WriteLine("\n========================");
-
-                Console.WriteLine("\n=== What do you want to do with products? ===");
-                Console.WriteLine("[1] Add a new product");
-                Console.WriteLine("[2] Update existing product");
-                Console.WriteLine("[3] Delete a product");
-                Console.WriteLine("\n=============================================");
-
-                Console.Write("\nChoose an option: ");
-                int productOption = Convert.ToInt32(Console.ReadLine());
-
-                switch (productOption)
-                {
-                    case 1:
-                        Console.WriteLine("\n=== You are UPDATING a Product Name ===");
-
-                        Console.Write("Product Name: ");
-                        string newProductName = Console.ReadLine();
-                        Console.Write("\nPrice: ");
-                        double newPrice = double.Parse(Console.ReadLine());
-
-                        Product newProduct = new Product();
-                        newProduct.ProductID = Guid.NewGuid();
-                        newProduct.ProductName = newProductName;
-                        newProduct.ProductPrice = newPrice;
-
-                        seller.ProductName.Add(newProduct);
-                        Console.WriteLine("\n=== Product added successfully ===");
-                        break;
-
-                    case 2:
-                        Console.WriteLine("\n=== You are UPDATING a Product Name ===");
-
-                        Console.Write("Enter product number to update: ");
-                        int updateIndex = Convert.ToInt32(Console.ReadLine()) - 1;
-
-                        if (updateIndex >= 0 && updateIndex < seller.ProductName.Count)
-                        {
-                            Console.WriteLine("\n===================");
-                            Console.Write("Enter new Product Name: ");
-                            seller.ProductName[updateIndex].ProductName = Console.ReadLine();
-                            Console.Write("Enter new Price: ");
-                            seller.ProductName[updateIndex].ProductPrice = double.Parse(Console.ReadLine());
-                            Console.WriteLine("\n=== Product updated successfully ===");
-                        }
-                        else
-                        {
-                            Console.WriteLine("\n=== Invalid product number ===");
-                        }
-                        break;
-
-                    case 3:
-                        Console.Write("Enter product number to delete: ");
-                        int deleteIndex = Convert.ToInt32(Console.ReadLine()) - 1;
-
-                        if (deleteIndex >= 0 && deleteIndex < seller.ProductName.Count)
-                        {
-                            Console.WriteLine("\n=== Successfully deleted " + seller.ProductName[deleteIndex].ProductName + " ===");
-                            seller.ProductName.RemoveAt(deleteIndex);
-                        }
-                        else
-                        {
-                            Console.WriteLine("\n=== Invalid product number ===");
-                        }
-                        break;
-
-                    default:
-                        Console.WriteLine("=== Invalid option ===");
-                        break;
+                    Console.WriteLine($"  [{i + 1}] Name: {seller.ProductName[i].ProductName}  |  Price: {seller.ProductName[i].ProductPrice}");
                 }
             }
 
-            bool success = sellerAppService.UpdateSeller(name, newName);
+            Console.WriteLine("\n===========================");
+            Console.WriteLine("  [1] Add Product");
+            Console.WriteLine("  [2] Update Product");
+            Console.WriteLine("  [3] Delete Product");
+            Console.WriteLine("===========================");
+            Console.Write("\n  Choose an option: ");
 
-            if (success)
-                Console.WriteLine("\n=== Successfully updated seller " + name + " ===");
-            else
-                Console.WriteLine("\n=== Update failed ===");
+            if (int.TryParse(Console.ReadLine(), out int option))
+            {
+                switch (option)
+                {
+                    case 1: //add
+
+                        Console.Write("  Name: ");
+                        string pName = Console.ReadLine().Trim();
+                        Console.Write("  Price: ");
+                        if (!double.TryParse(Console.ReadLine(), out double pPrice) || pPrice < 0 )
+                        {
+                            Console.WriteLine("\n  >> Invalid price. Changed to 0");
+                            pPrice = 0;
+                        }
+
+                        Product p = new Product();
+                        p.ProductID = Guid.NewGuid();
+                        p.ProductName = pName;
+                        p.ProductPrice = pPrice;
+
+                        if (sellerAppService.AddProduct(name, p))
+                        {
+                            Console.WriteLine("\n  >> Product added.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n  >> Failed to add product.");
+                        }
+                        break;
+
+                    case 2: //upd
+
+                        if (seller.ProductName.Count == 0)
+                        {
+                            Console.WriteLine("\n  >> There is no product to Update.");
+                            break;
+                        }
+
+                        Console.Write("  Product number: ");
+                        if (!int.TryParse(Console.ReadLine(), out int uIndex))
+                        {
+                            Console.WriteLine("\n  >> Invalid product number.");
+                            break;
+                        }
+
+                        Console.Write("  New name: ");
+                        string uName = Console.ReadLine().Trim();
+
+                        Console.Write("  New price: ");
+                        if (!double.TryParse(Console.ReadLine(), out double uPrice) || uPrice < 0 )
+                        {
+                            Console.WriteLine("\n  >> Invalid price. Changed to 0");
+                            uPrice = 0;
+                        }
+
+                        if (sellerAppService.UpdateProduct(name, uIndex - 1, uName, uPrice))
+                        {
+                            Console.WriteLine("\n  >> Product updated.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n  >> Update failed.");
+                        }
+                        break;
+
+                    case 3: //del
+
+                        if (seller.ProductName.Count == 0)
+                        {
+                            Console.WriteLine("\n  >> There is no product to Delete.");
+                            break;
+                        }
+
+                        Console.Write("  Product number: ");
+                        if (!int.TryParse(Console.ReadLine(), out int dIndex))
+                        {
+                            Console.WriteLine("\n  >> Invalid input. Please enter a number.");
+                            break;
+                        }
+
+                        if (sellerAppService.DeleteProduct(name, dIndex - 1))
+                        {
+                            Console.WriteLine("\n  >> Product deleted.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n  >> Invalid product number.");
+                        }
+                        break;
+                }
+            }
         }
 
         static void DeleteSeller()
         {
-            Console.WriteLine("\n ===== DELETING A SELLER ===== ");
-            Console.WriteLine("\n=================================");
+            Console.WriteLine("\n===========================");
+            Console.WriteLine("  Delete Seller");
+            Console.WriteLine("===========================");
 
-            Console.Write("\nEnter Seller Name to delete: ");
-            string name = Console.ReadLine();
+            Console.Write("\n  Seller name: ");
+            string name = Console.ReadLine().Trim();
 
-            bool success = sellerAppService.DeleteSeller(name);
-
-            Console.WriteLine("\n=================================");
-
-            if (success)
-                Console.WriteLine("\n=== Successfully deleted " + name + " ===");
+            if (sellerAppService.DeleteSeller(name))
+            {
+                Console.WriteLine($"\n  >> Seller \"{name}\" deleted.");
+            }
             else
-                Console.WriteLine("\n=== Seller " + name + " not found ===");
+            {
+                Console.WriteLine($"\n  >> Seller \"{name}\" not found.");
+            }
         }
     }
 }
