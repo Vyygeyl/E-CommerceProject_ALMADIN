@@ -6,7 +6,7 @@ namespace E_CommerceDataService
     public class SellerDataService : INTSellerDataService
     {
         // SellerInMemoryData / SellerJsonData / SellerDbData  
-        INTSellerDataService dataService = new SellerInMemoryData();
+        INTSellerDataService dataService = new SellerDbData();
 
         // CREATE
         public void Add(SellerProfile seller)

@@ -13,7 +13,7 @@ namespace E_CommerceUI
         {
             string restart;
 
-            do 
+            do
             {
                 Console.WriteLine("\n===========================");
                 Console.WriteLine(" E-Commerce Seller Management");
@@ -21,7 +21,7 @@ namespace E_CommerceUI
                 Console.WriteLine("  [1] View Seller Profiles");
                 Console.WriteLine("  [2] Add Seller Profile");
                 Console.WriteLine("  [3] Update Seller Name");
-                Console.WriteLine("  [4] Manage Products"); 
+                Console.WriteLine("  [4] Manage Products");
                 Console.WriteLine("  [5] Delete Seller");
                 Console.WriteLine("===========================");
 
@@ -115,8 +115,9 @@ namespace E_CommerceUI
             }
 
             SellerProfile newSeller = new SellerProfile();
+            newSeller.SellerID = Guid.NewGuid();
             newSeller.SellerName = name;
-
+            newSeller.ProductName = new List<Product>();
 
             for (int i = 0; i < count; i++)
             {
@@ -200,7 +201,6 @@ namespace E_CommerceUI
             {
                 Console.WriteLine("\n  [ No products listed ]");
             }
-
             else
             {
                 Console.WriteLine($"\n  {seller.SellerName} Shop products:\n");
@@ -221,12 +221,11 @@ namespace E_CommerceUI
             {
                 switch (option)
                 {
-                    case 1: //add
-
+                    case 1:
                         Console.Write("  Name: ");
                         string pName = Console.ReadLine().Trim();
                         Console.Write("  Price: ");
-                        if (!double.TryParse(Console.ReadLine(), out double pPrice) || pPrice < 0 )
+                        if (!double.TryParse(Console.ReadLine(), out double pPrice) || pPrice < 0)
                         {
                             Console.WriteLine("\n  >> Invalid price. Changed to 0");
                             pPrice = 0;
@@ -247,8 +246,7 @@ namespace E_CommerceUI
                         }
                         break;
 
-                    case 2: //upd
-
+                    case 2:
                         if (seller.ProductName.Count == 0)
                         {
                             Console.WriteLine("\n  >> There is no product to Update.");
@@ -266,7 +264,7 @@ namespace E_CommerceUI
                         string uName = Console.ReadLine().Trim();
 
                         Console.Write("  New price: ");
-                        if (!double.TryParse(Console.ReadLine(), out double uPrice) || uPrice < 0 )
+                        if (!double.TryParse(Console.ReadLine(), out double uPrice) || uPrice < 0)
                         {
                             Console.WriteLine("\n  >> Invalid price. Changed to 0");
                             uPrice = 0;
@@ -282,8 +280,7 @@ namespace E_CommerceUI
                         }
                         break;
 
-                    case 3: //del
-
+                    case 3:
                         if (seller.ProductName.Count == 0)
                         {
                             Console.WriteLine("\n  >> There is no product to Delete.");
